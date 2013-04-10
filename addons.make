@@ -1,3 +1,0 @@
-ofxXmlSettings
-ofxBox2d
-ofxControlPanel
