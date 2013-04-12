@@ -45,6 +45,9 @@ void testApp::mousePressed(int x, int y, int button){
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
 
+    delete builder;
+    builder = new Builder(3, rand()%10, 3 );
+    
 }
 
 //--------------------------------------------------------------

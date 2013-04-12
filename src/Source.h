@@ -19,11 +19,15 @@ class Source : public Gate {
     
     vector<float> animationOut;
     
+    vector<Wire*> outputs;
+    
 public:
     
     Source( int howManySources );
     ~Source(){};
     
     vector<EState> getGateElectricity();
+    
+    bool addSourceOutputs(Wire* wireOutput);
     
 };

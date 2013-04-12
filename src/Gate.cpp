@@ -16,12 +16,10 @@ bool Gate::addInputs(Wire* input1, Wire* input2)
     this->input1 = input1;
     this->input2 = input2;
     
-    
+    //Make sure the inputs are not null anymore
     if (this->input1 != NULL && this->input2 != NULL) {
-        cout << "gate inputs and wire outputs are set correctly" << endl;
         return true;
     } else {
-        cout << "the gate inputs are not set correctly" << endl;
         return false;
     }
     
@@ -32,18 +30,14 @@ bool Gate::addOutput(Wire* output1)
     //set the output of the gate
     output = output1;
     
-    //set the input of the wire
+    //set the input of the wire and check that everything is set
     if (output1->setGateInput(this)) {
-        
         if (output != NULL) {
-            cout << "both the output of the gate and the input of the wire were set correctly" << endl;
             return true;
         } else {
-            cout << "output wire was not set correctly" << endl;
             return false;
         }
     } else {
-        cout << "wire was not set correctly" << endl;
         return false;
     }
     
@@ -51,14 +45,13 @@ bool Gate::addOutput(Wire* output1)
 
 bool Gate::addInput(Wire* input)
 {
-    
+    //set the input wire
     input1 = input;
     
+    //make sure it's set
     if (input1 != NULL) {
-        cout << me << " gate's input from wire's output is set up correctly" << endl;
         return true;
     } else {
-        cout << me << " gate's input is not set up correctly" << endl;
         return false;
     }
     

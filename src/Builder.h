@@ -21,6 +21,22 @@ class Builder {
     
     vector<Gate> circuit;
     
+    Wire* w1;
+    Wire* w2;
+    Wire* w3;
+    Wire* w4;
+    Wire* w5;
+    Wire* w6;
+    
+    Gate* n;
+    Gate* o;
+    Gate* a;
+    
+    Result* r;
+    
+    Source* s1;
+    Source* s2;
+    
 public:
     
     Builder(int howManyGates, int howManySources, int howManyLevels);

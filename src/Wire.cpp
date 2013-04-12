@@ -20,6 +20,7 @@ Wire::~Wire()
 
 }
 
+//This is so we can check up the line fast
 bool Wire::setGateInput( Gate* input )
 {
     this->input = input;
@@ -47,7 +48,7 @@ void Wire::setWireElectricity(vector<EState> states)
 
 vector<EState> Wire::getWireElectricity()
 {
-    cout << "getting electricity from gate " << input->getMe() << endl;
+    //get the states up the line
     return input->getGateElectricity();
 }
 

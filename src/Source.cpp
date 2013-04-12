@@ -39,6 +39,23 @@ Source::Source(int howManySources)
 
 vector<EState> Source::getGateElectricity()
 {
-    cout << "getting electricity in source " << endl;
     return electricity;
+}
+
+bool Source::addSourceOutputs(Wire* wireOutput)
+{
+    //set the output of the gate
+    outputs.push_back(wireOutput);
+    
+    //set the input of the wire and make sure everything
+    //is set before you return.
+    if (wireOutput->setGateInput(this)) {
+        if(outputs.back() != NULL) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
 }

@@ -43,7 +43,6 @@ protected:
     
 public:
     
-    //These two need a wire
     virtual bool addInputs( Wire* input1, Wire* input2 );
     virtual bool addInput(Wire* input);
     virtual bool addOutput( Wire* output );

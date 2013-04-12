@@ -16,24 +16,34 @@ Builder::Builder(int howManyGates, int howManySources, int howManyLevels)
     
     if (howManyGates <= 0 || howManySources <= 1 || howManyLevels < 0) return;
     
-    Source* s1 = new Source(howManySources);
-    Source* s2 = new Source(howManySources);
+    s1 = new Source(howManySources);
+    s2 = new Source(howManySources);
     
-    Result* r = new Result(howManySources);
+    r = new Result(howManySources);
     
-    Gate* g = new Not(howManySources);
+    n = new Not(howManySources);
+    o = new Or(howManySources);
+    a = new And(howManySources);
     
-    Wire* w1 = new Wire(howManySources);
-    Wire* w2 = new Wire(howManySources);
-    Wire* w3 = new Wire(howManySources);
+    w1 = new Wire(howManySources);
+    w2 = new Wire(howManySources);
+    w3 = new Wire(howManySources);
+    w4 = new Wire(howManySources);
+    w5 = new Wire(howManySources);
+    w6 = new Wire(howManySources);
     
     s1->addOutput(w1);
-    s2->addOutput(w2);
+    s2->addSourceOutputs(w2);
+    s2->addSourceOutputs(w3);
     
-    g->addInput(w1);
-    g->addOutput(w3);
+    o->addInputs(w1, w2);
+    o->addOutput(w4);
+    n->addInput(w3);
+    n->addOutput(w5);
+    a->addInputs(w4, w5);
+    a->addOutput(w6);
     
-    r->addInput(w3);
+    r->addInput(w6);
     
     r->getResult();
     
@@ -77,6 +87,26 @@ Builder::Builder(int howManyGates, int howManySources, int howManyLevels)
 //    //construct the levels
 //    vector<Gate*>::iterator it = gates.begin();
     
+    
+}
+
+Builder::~Builder()
+{
+    delete s1;
+    delete s2;
+    
+    delete r;
+    
+    delete n;
+    delete o; 
+    delete a;
+    
+    delete w1;
+    delete w2;
+    delete w3;
+    delete w4;
+    delete w5;
+    delete w6;
     
 }
 

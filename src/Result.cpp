@@ -16,9 +16,13 @@ Result::Result(int howManySources)
     result.resize(howManySources);
 }
 
+Result::~Result()
+{
+    result.clear();
+}
+
 void Result::getResult()
 {
-    cout << "starting to get electricity in result" << endl;
     result = input1->getWireElectricity();
     
     if (howManySources == result.size()) {
