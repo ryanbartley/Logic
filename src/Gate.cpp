@@ -16,17 +16,12 @@ bool Gate::addInputs(Wire* input1, Wire* input2)
     this->input1 = input1;
     this->input2 = input2;
     
-    //set the output connections from inside the wires
-    if (input1->setOutput(this, 0) && input2->setOutput(this, 1)) {
-        if (this->input1 != NULL && this->input2 != NULL) {
-            cout << "gate inputs and wire outputs are set correctly" << endl;
-            return true;
-        } else {
-            cout << "the gate inputs are not set correctly" << endl;
-            return false;
-        }
+    
+    if (this->input1 != NULL && this->input2 != NULL) {
+        cout << "gate inputs and wire outputs are set correctly" << endl;
+        return true;
     } else {
-        cout << "the wire outputs are not set correctly" << endl;
+        cout << "the gate inputs are not set correctly" << endl;
         return false;
     }
     
@@ -38,12 +33,17 @@ bool Gate::addOutput(Wire* output1)
     output = output1;
     
     //set the input of the wire
-
-    if (output != NULL) {
-        cout << "both the output of the gate and the input of the wire were set correctly" << endl;
-        return true;
+    if (output1->setGateInput(this)) {
+        
+        if (output != NULL) {
+            cout << "both the output of the gate and the input of the wire were set correctly" << endl;
+            return true;
+        } else {
+            cout << "output wire was not set correctly" << endl;
+            return false;
+        }
     } else {
-        cout << "output wire was not set correctly" << endl;
+        cout << "wire was not set correctly" << endl;
         return false;
     }
     
@@ -51,34 +51,31 @@ bool Gate::addOutput(Wire* output1)
 
 bool Gate::addInput(Wire* input)
 {
-   
+    
     input1 = input;
     
-    if (input->setOutput(1)) {
-        if (input1 != NULL) {
-            cout << me << " gate's input from wire's output is set up correctly" << endl;
-            return true;
-        } else {
-            cout << me << " gate's input is not set up correctly" << endl;
-            return false;
-        }
+    if (input1 != NULL) {
+        cout << me << " gate's input from wire's output is set up correctly" << endl;
+        return true;
     } else {
-        cout << me << " gate's wire output is not set up correctly" << endl;
+        cout << me << " gate's input is not set up correctly" << endl;
         return false;
     }
     
+}
+
+vector<EState> Gate::getGateElectricity()
+{
     
 }
 
 void Gate::sendOutput()
 {
-    output->setWireElectricity(electricityOut);
+    
 }
 
-bool Gate::setIncomingElectricity(state)
+bool Gate::setIncomingElectricity()
 {
-    
-    
     
 }
 

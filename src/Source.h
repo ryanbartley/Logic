@@ -24,4 +24,6 @@ public:
     Source( int howManySources );
     ~Source(){};
     
+    vector<EState> getGateElectricity();
+    
 };

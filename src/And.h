@@ -17,8 +17,9 @@ class And : public Gate {
     bool addInput( Wire* input1 ) {};
 public:
     
-    And();
+    And(int howManySources);
     ~And();
     
-   
+    vector<EState> getGateElectricity();
+    void processElectricity();
 };

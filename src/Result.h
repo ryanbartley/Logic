@@ -10,10 +10,19 @@
 
 #include "Gate.h"
 
+class Wire;
+
 class Result : public Gate {
     
     vector<EState> result;
     
+    int howManySources;
+    
 public:
+    
+    Result(int howManySources);
+    ~Result();
+    
+    void getResult();
     
 };

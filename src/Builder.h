@@ -14,6 +14,7 @@
 #include "Not.h"
 #include "Source.h"
 #include "State.h"
+#include "Result.h"
 
 
 class Builder {

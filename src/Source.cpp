@@ -31,9 +31,14 @@ Source::Source(int howManySources)
         } else {
             *it = LOW;
         }
-        cout << "the value of the source " << *it << " ";
+        cout << *it << " ";
         it++;
     }
     cout << endl;
 }
 
+vector<EState> Source::getGateElectricity()
+{
+    cout << "getting electricity in source " << endl;
+    return electricity;
+}

@@ -18,10 +18,10 @@ class Not : public Gate {
     
 public:
     
-    Not();
+    Not(int howManySources);
     ~Not();
     
-    
-
+    vector<EState> getGateElectricity();
+    void processElectricity();
     
 };

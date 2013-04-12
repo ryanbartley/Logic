@@ -7,11 +7,11 @@
 //
 
 #include "Wire.h"
+#include "Gate.h"
 
 Wire::Wire(int howManySources)
 {
-    outputConnection = -1;
-    
+    input = NULL;
     mState.resize(howManySources);
 }
 
@@ -20,18 +20,22 @@ Wire::~Wire()
 
 }
 
-bool Wire::setOutput( int connection )
+bool Wire::setGateInput( Gate* input )
 {
+    this->input = input;
     
-    //This is to tell whether the connection connects to the top or bottom
-    //if you're holding the iPhone horizontally
-    this->outputConnection = connection;
-    
+    if (this->input != NULL) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 void Wire::setWireElectricity(vector<EState> states)
 {
-    mStateInProgress = states;
+    this->mState.clear();
+    
+    this->mState = states;
     
     if (mState.size() > 0) {
         cout << "received state inputs " << endl;
@@ -41,19 +45,14 @@ void Wire::setWireElectricity(vector<EState> states)
     
 }
 
-
+vector<EState> Wire::getWireElectricity()
+{
+    cout << "getting electricity from gate " << input->getMe() << endl;
+    return input->getGateElectricity();
+}
 
 void Wire::update()
 {
-    
-    if (mState != mStateInProgress) {
-        cout << "the source has changed the state" << endl;
-        mState = mStateInProgress;
-        
-        
-    } else {
-        cout << "source hasn't changed" << endl;
-    }
     
     
 }

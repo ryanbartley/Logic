@@ -11,9 +11,9 @@
 #include <vector>
 
 enum EState {
-    FLOATING,
-    HIGH,
-    LOW
+    FLOATING = 0,
+    HIGH = 1,
+    LOW = -1
 };
 
 enum Gates {
