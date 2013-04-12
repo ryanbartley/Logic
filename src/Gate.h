@@ -10,6 +10,7 @@
 
 #include "ofMain.h"
 #include "State.h"
+#define DEBUG 
 
 class Wire;
 
@@ -20,6 +21,7 @@ protected:
     Wire* input2;
     
     Wire* output;
+    
     
     EState state;
     
@@ -35,10 +37,15 @@ public:
     virtual bool addInput(Wire* input);
     virtual bool addOutput( Wire* output );
     
-    virtual Gates getMe() { return me; };
-    
     virtual void update();
     virtual void draw();
+    
+    virtual bool setIncomingElectricity();
+    virtual void sendOutput();
+    
+    virtual void processElectricity() {};
+    
+    virtual Gates getMe() { return me; };
     
     //this isn't a pixel location Vector it's for a column/row
     //position which we can then standardize

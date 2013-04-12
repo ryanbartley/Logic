@@ -59,8 +59,8 @@ Builder::Builder(int howManyGates, int howManySources, int howManyLevels)
     //construct the levels
     vector<Gate*>::iterator it = gates.begin();
     
-    Wire* w1 = new Wire();
-    Wire* w2 = new Wire();
+    Wire* w1 = new Wire(howManySources);
+    Wire* w2 = new Wire(howManySources);
     
     s1->addOutput(w1);
     s2->addOutput(w2);

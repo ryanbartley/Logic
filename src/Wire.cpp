@@ -6,23 +6,13 @@
 //
 //
 
-#include "Gate.h"
 #include "Wire.h"
 
-Wire::Wire()
+Wire::Wire(int howManySources)
 {
-    input = NULL;
-    output = NULL;
-    
-    mState = FLOATING;
-    mStateInProgress = FLOATING;
-    
-    mLength = 0.0f;
-    mElecPos = 0.0f;
-    
-    visible = false;
-    
     outputConnection = -1;
+    
+    mState.resize(howManySources);
 }
 
 Wire::~Wire()
@@ -30,43 +20,46 @@ Wire::~Wire()
 
 }
 
-bool Wire::setInput( Gate* input  )
+bool Wire::setOutput( int connection )
 {
-    this->input = input;
     
-    if (this->input != NULL) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-bool Wire::setOutput( Gate* output, int connection )
-{
-    this->output = output;
-    
+    //This is to tell whether the connection connects to the top or bottom
+    //if you're holding the iPhone horizontally
     this->outputConnection = connection;
     
-    if (this->output != NULL) {
-        return true;
-    } else {
-        return false;
-    }
 }
+
+void Wire::setWireElectricity(vector<EState> states)
+{
+    mStateInProgress = states;
+    
+    if (mState.size() > 0) {
+        cout << "received state inputs " << endl;
+    } else {
+        cout << "there was a problem sending the states" << endl;
+    }
+    
+}
+
+
 
 void Wire::update()
 {
+    
+    if (mState != mStateInProgress) {
+        cout << "the source has changed the state" << endl;
+        mState = mStateInProgress;
+        
+        
+    } else {
+        cout << "source hasn't changed" << endl;
+    }
+    
     
 }
 
 void Wire::draw()
 {
     
-    
-    
 }
 
-ofVec2f Wire::getStartPosition() {}
-ofVec2f Wire::getEndPosition() {}
-bool Wire::setStartPosition(ofVec2f start) {}
-bool Wire::setEndPosition() {}

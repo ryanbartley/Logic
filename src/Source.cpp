@@ -9,27 +9,27 @@
 #include "Wire.h"
 #include "Source.h"
 
-Source::Source(int source)
+Source::Source(int howManySources)
 {
     
-    if (source <= 0) return;
+    if (howManySources <= 0) return;
     
     me = SOURCE;
     
     output = NULL;
     
-    this->source1.resize(source);
+    this->electricity.resize(howManySources);
     
+    cout << "I'm going into the source" << endl;
+    vector<EState>::iterator it = this->electricity.begin();
     
-    cout << "I'm going into the first source" << endl;
-    vector<bool>::iterator it = this->source1.begin();
-    while (it != this->source1.end()) {
+    while (it != this->electricity.end()) {
         int random = rand()%100;
         
         if (random > 50) {
-            *it = true;
+            *it = HIGH;
         } else {
-            *it = false;
+            *it = LOW;
         }
         cout << "the value of the source " << *it << " ";
         it++;

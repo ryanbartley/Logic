@@ -12,6 +12,7 @@
 		2bf1c6a3acfb774127e565cfc9d44aa1 /* Builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09e73752bcdba783486614829d858889 /* Builder.cpp */; };
 		6d18dc3137b95406237a030510974eff /* Gate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6cd0279d29a127b46a7f949b07abc1db /* Gate.cpp */; };
 		88827c654226c2446cc44420c02fd37d /* Not.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1e2abaf54257bd4224d0da03f4da19ac /* Not.cpp */; };
+		B352123B171870FA00F6F08B /* Result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3521239171870F900F6F08B /* Result.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -78,6 +79,8 @@
 		73ee17a1c69e98554467c63dc41aaaf0 /* Source.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Source.cpp; path = src/Source.cpp; sourceTree = SOURCE_ROOT; };
 		7c6daa76f193d87cbada2455319ac7c7 /* Source.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Source.h; path = src/Source.h; sourceTree = SOURCE_ROOT; };
 		961e8a85d290603058983d54ea00c05f /* Not.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Not.h; path = src/Not.h; sourceTree = SOURCE_ROOT; };
+		B3521239171870F900F6F08B /* Result.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Result.cpp; sourceTree = "<group>"; };
+		B352123A171870FA00F6F08B /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -149,8 +152,46 @@
 				961e8a85d290603058983d54ea00c05f /* Not.h */,
 				73ee17a1c69e98554467c63dc41aaaf0 /* Source.cpp */,
 				7c6daa76f193d87cbada2455319ac7c7 /* Source.h */,
+				B3521239171870F900F6F08B /* Result.cpp */,
+				B352123A171870FA00F6F08B /* Result.h */,
 			);
 			name = Gates;
+			sourceTree = "<group>";
+		};
+		B35212351717990300F6F08B /* Building */ = {
+			isa = PBXGroup;
+			children = (
+				09e73752bcdba783486614829d858889 /* Builder.cpp */,
+				fdd6a1c7956861dfa9ccb1e364044b51 /* Builder.h */,
+			);
+			name = Building;
+			sourceTree = "<group>";
+		};
+		B35212361717991800F6F08B /* OpenFrameWorks */ = {
+			isa = PBXGroup;
+			children = (
+				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
+				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
+			);
+			name = OpenFrameWorks;
+			sourceTree = "<group>";
+		};
+		B35212371717992B00F6F08B /* Wire */ = {
+			isa = PBXGroup;
+			children = (
+				b4343497fc01fc0d58410067ce203a43 /* Wire.cpp */,
+				042628ae88c04917a8fe0e18904d865e /* Wire.h */,
+			);
+			name = Wire;
+			sourceTree = "<group>";
+		};
+		B35212381717996200F6F08B /* Master Include */ = {
+			isa = PBXGroup;
+			children = (
+				1760d8cd1211521ade798382f65698b1 /* State.h */,
+			);
+			name = "Master Include";
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
@@ -223,15 +264,11 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				B35212381717996200F6F08B /* Master Include */,
+				B35212361717991800F6F08B /* OpenFrameWorks */,
+				B35212351717990300F6F08B /* Building */,
 				B35212251717367700F6F08B /* Gates */,
-				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
-				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
-				09e73752bcdba783486614829d858889 /* Builder.cpp */,
-				fdd6a1c7956861dfa9ccb1e364044b51 /* Builder.h */,
-				1760d8cd1211521ade798382f65698b1 /* State.h */,
-				b4343497fc01fc0d58410067ce203a43 /* Wire.cpp */,
-				042628ae88c04917a8fe0e18904d865e /* Wire.h */,
+				B35212371717992B00F6F08B /* Wire */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -338,6 +375,7 @@
 				f0af904f730ec919de9da753f6e8b1d3 /* Or.cpp in Sources */,
 				e846184e0278eb03892d11d8ddd6d37d /* Source.cpp in Sources */,
 				1ece2eeb72b9631f49f5779797da0c88 /* Wire.cpp in Sources */,
+				B352123B171870FA00F6F08B /* Result.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

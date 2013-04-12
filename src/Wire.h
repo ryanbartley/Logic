@@ -11,44 +11,24 @@
 #include "ofMain.h"
 #include "State.h"
 
-class Gate;
-
 class Wire {
     
-    Gate* input;
-    Gate* output;
-    
-    EState mState;
-    EState mStateInProgress;
+    vector<EState> mState;
+    vector<EState> mStateInProgress;
     
     int outputConnection;
     
-    float mLength;
-    float mElecPos;
-    
-    bool visible;
-    
 public:
-    
-    ofVec2f source;
-    ofVec2f target;
-    
-    Wire();
+
+    Wire( int howManySources );
     ~Wire();
     
-    bool setInput( Gate* input  );
-    bool setOutput( Gate* output, int connection );
+    bool setOutput( int connection );
+    
+    void setWireElectricity( vector<EState> states );
     
     void update();
     void draw();
-    
-    ofVec2f getStartPosition();
-    ofVec2f getEndPosition();
-    
-    bool setStartPosition(ofVec2f start);
-    bool setEndPosition();
-    
-    
 
 };
 

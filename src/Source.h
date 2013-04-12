@@ -15,16 +15,13 @@ class Wire;
 
 class Source : public Gate {
     
-    vector<bool> source1;
-
+    vector<EState> electricity;
     
-    
+    vector<float> animationOut;
     
 public:
     
-    Source( int source );
+    Source( int howManySources );
     ~Source(){};
-    
-    
     
 };
