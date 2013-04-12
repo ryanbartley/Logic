@@ -16,16 +16,15 @@ class Wire;
 class Source : public Gate {
     
     vector<bool> source1;
-    vector<bool> source2;
+
     
-    Wire* source1Output;
-    Wire* source2Output;
+    
     
 public:
     
-    Source( int source1 );
+    Source( int source );
     ~Source(){};
     
-    bool setOutputs(Wire* outPutWire1, Wire* outPutWire2);
+    
     
 };

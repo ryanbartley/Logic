@@ -14,16 +14,11 @@ class Wire;
 
 class Or : public Gate {
     
-    Wire* input1;
-    Wire* input2;
-    
-    Wire* output;
-    
+    bool addInput( Wire* input1 ) {};
 public:
     
     Or();
     ~Or();
     
-    bool addInputs( Wire* input1, Wire* input2 );
-    bool addOutput( Wire* output1 );
+
 };

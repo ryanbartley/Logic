@@ -13,9 +13,11 @@ using namespace std;
 
 Builder::Builder(int howManyGates, int howManySources, int howManyLevels)
 {
-    if (howManyGates <= 0 || howManySources <= 1 || howManyLevels > 0) return;
     
-    Source* s = new Source(howManySources);
+    if (howManyGates <= 0 || howManySources <= 1 || howManyLevels < 0) return;
+    
+    Source* s1 = new Source(howManySources);
+    Source* s2 = new Source(howManySources);
     
     Gates g[howManyGates];
     
@@ -60,7 +62,8 @@ Builder::Builder(int howManyGates, int howManySources, int howManyLevels)
     Wire* w1 = new Wire();
     Wire* w2 = new Wire();
     
-    s->setOutputs( w1, w2);
+    s1->addOutput(w1);
+    s2->addOutput(w2);
     (*it)->addInputs(w1, w2);
     
 }

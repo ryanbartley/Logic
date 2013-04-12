@@ -14,16 +14,11 @@ class Wire;
 
 class And : public Gate {
     
-    Wire* input1;
-    Wire* input2;
-    
-    Wire* output;
-    
+    bool addInput( Wire* input1 ) {};
 public:
     
     And();
     ~And();
     
-    bool addInputs( Wire* input1, Wire* input2 );
-    bool addOutput( Wire* output1 );
+   
 };

@@ -21,17 +21,16 @@ Wire::Wire()
     mElecPos = 0.0f;
     
     visible = false;
+    
+    outputConnection = -1;
 }
 
-Wire::~Wire(){}
+Wire::~Wire()
+{
 
+}
 
-ofVec2f getStartPosition();
-ofVec2f getEndPosition();
-bool setStartPosition(ofVec2f start);
-bool setEndPosition();
-
-bool Wire::setInput( Gate* input )
+bool Wire::setInput( Gate* input  )
 {
     this->input = input;
     
@@ -42,9 +41,11 @@ bool Wire::setInput( Gate* input )
     }
 }
 
-bool Wire::setOutput( Gate* output )
+bool Wire::setOutput( Gate* output, int connection )
 {
     this->output = output;
+    
+    this->outputConnection = connection;
     
     if (this->output != NULL) {
         return true;
@@ -52,3 +53,20 @@ bool Wire::setOutput( Gate* output )
         return false;
     }
 }
+
+void Wire::update()
+{
+    
+}
+
+void Wire::draw()
+{
+    
+    
+    
+}
+
+ofVec2f Wire::getStartPosition() {}
+ofVec2f Wire::getEndPosition() {}
+bool Wire::setStartPosition(ofVec2f start) {}
+bool Wire::setEndPosition() {}

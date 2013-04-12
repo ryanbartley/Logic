@@ -14,14 +14,13 @@ class Wire;
 
 class Not : public Gate {
     
-    
+    bool addInputs(Wire* input1, Wire* input2) { };
 public:
     
     Not();
     ~Not();
     
-    bool addInput( Wire* input1 );
-    bool addOutput( Wire* output1 );
+    
 
     
 };

@@ -21,6 +21,8 @@ class Wire {
     EState mState;
     EState mStateInProgress;
     
+    int outputConnection;
+    
     float mLength;
     float mElecPos;
     
@@ -34,13 +36,19 @@ public:
     Wire();
     ~Wire();
     
+    bool setInput( Gate* input  );
+    bool setOutput( Gate* output, int connection );
+    
+    void update();
+    void draw();
+    
     ofVec2f getStartPosition();
     ofVec2f getEndPosition();
+    
     bool setStartPosition(ofVec2f start);
     bool setEndPosition();
     
-    bool setInput( Gate* input );
-    bool setOutput( Gate* output );
+    
 
 };
 

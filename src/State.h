@@ -21,5 +21,7 @@ enum Gates {
     AND,
     OR,
     NOT,
+    SOURCE,
+    OUTPUT
     
 };
