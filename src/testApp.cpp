@@ -4,16 +4,21 @@
 void testApp::setup(){
 
     
-    builder = new Builder(3, 3, 3);
+//    builder = new Builder(3, 3, 3);
+    level = new Level();
+    
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+    level->update();
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
+    ofBackground(0, 0, 0);
+    
+    level->draw();
 
 }
 
@@ -45,8 +50,8 @@ void testApp::mousePressed(int x, int y, int button){
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
 
-    delete builder;
-    builder = new Builder(3, rand()%10, 3 );
+//    delete builder;
+//    builder = new Builder(3, rand()%10, 3 );
     
 }
 

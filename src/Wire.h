@@ -22,15 +22,16 @@ class Wire {
     vector<ofVec2f> points;
     
     Gate* input;
+    Gate* output;
     
 public:
 
-    Wire( int howManySources );
+    Wire();
     ~Wire();
     
-    bool setGateInput(Gate* input);
+    bool setInput(Gate* input);
+    bool setOutput(Gate* output);
     
-    void setWireElectricity( vector<EState> states );
     vector<EState> getWireElectricity() ;
     
     void setShape(vector<ofVec2f> points) { this->points = points; };

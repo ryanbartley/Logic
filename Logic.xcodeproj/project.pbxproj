@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1ece2eeb72b9631f49f5779797da0c88 /* Wire.cpp in Sources */ = {isa = PBXBuildFile; fileRef = b4343497fc01fc0d58410067ce203a43 /* Wire.cpp */; };
-		29fdb0866f5479a8e0d06b96a6ee9094 /* And.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c2768e0255b1f49b202bd2cea9eb9b4a /* And.cpp */; };
-		2bf1c6a3acfb774127e565cfc9d44aa1 /* Builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09e73752bcdba783486614829d858889 /* Builder.cpp */; };
-		6d18dc3137b95406237a030510974eff /* Gate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6cd0279d29a127b46a7f949b07abc1db /* Gate.cpp */; };
-		88827c654226c2446cc44420c02fd37d /* Not.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1e2abaf54257bd4224d0da03f4da19ac /* Not.cpp */; };
+		2A9912D5171DB84800270040 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A9912D3171DB84800270040 /* Level.cpp */; };
+		2AAD561C171F120F0096C987 /* And.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD560B171F120F0096C987 /* And.cpp */; };
+		2AAD561D171F120F0096C987 /* Builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD5607171F120F0096C987 /* Builder.cpp */; };
+		2AAD561E171F120F0096C987 /* Gate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD5609171F120F0096C987 /* Gate.cpp */; };
+		2AAD561F171F120F0096C987 /* Not.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD560F171F120F0096C987 /* Not.cpp */; };
+		2AAD5620171F120F0096C987 /* Or.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD560D171F120F0096C987 /* Or.cpp */; };
+		2AAD5621171F120F0096C987 /* Source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD5611171F120F0096C987 /* Source.cpp */; };
+		2AAD5622171F120F0096C987 /* Wire.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD5613171F120F0096C987 /* Wire.cpp */; };
 		B352123B171870FA00F6F08B /* Result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3521239171870F900F6F08B /* Result.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
@@ -33,8 +36,6 @@
 		E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */; };
 		E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E715D3B6510020DFD4 /* QTKit.framework */; };
 		E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F985F515E0DE99003869B5 /* Accelerate.framework */; };
-		e846184e0278eb03892d11d8ddd6d37d /* Source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73ee17a1c69e98554467c63dc41aaaf0 /* Source.cpp */; };
-		f0af904f730ec919de9da753f6e8b1d3 /* Or.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6bdc950f31b1870843cc85eb3b2d1b37 /* Or.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,17 +69,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		042628ae88c04917a8fe0e18904d865e /* Wire.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Wire.h; path = src/Wire.h; sourceTree = SOURCE_ROOT; };
-		09e73752bcdba783486614829d858889 /* Builder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Builder.cpp; path = src/Builder.cpp; sourceTree = SOURCE_ROOT; };
-		1760d8cd1211521ade798382f65698b1 /* State.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = State.h; path = src/State.h; sourceTree = SOURCE_ROOT; };
-		1e2abaf54257bd4224d0da03f4da19ac /* Not.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Not.cpp; path = src/Not.cpp; sourceTree = SOURCE_ROOT; };
-		4fad68a9db50efb38ddc20645c06e37a /* Or.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Or.h; path = src/Or.h; sourceTree = SOURCE_ROOT; };
-		644116e8707dbcfcca9b44a747f2017f /* Gate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Gate.h; path = src/Gate.h; sourceTree = SOURCE_ROOT; };
-		6bdc950f31b1870843cc85eb3b2d1b37 /* Or.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Or.cpp; path = src/Or.cpp; sourceTree = SOURCE_ROOT; };
-		6cd0279d29a127b46a7f949b07abc1db /* Gate.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Gate.cpp; path = src/Gate.cpp; sourceTree = SOURCE_ROOT; };
-		73ee17a1c69e98554467c63dc41aaaf0 /* Source.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Source.cpp; path = src/Source.cpp; sourceTree = SOURCE_ROOT; };
-		7c6daa76f193d87cbada2455319ac7c7 /* Source.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Source.h; path = src/Source.h; sourceTree = SOURCE_ROOT; };
-		961e8a85d290603058983d54ea00c05f /* Not.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Not.h; path = src/Not.h; sourceTree = SOURCE_ROOT; };
+		2A9912D3171DB84800270040 /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Level.cpp; sourceTree = "<group>"; };
+		2A9912D4171DB84800270040 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		2AAD5606171F120F0096C987 /* State.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = State.h; path = src/State.h; sourceTree = SOURCE_ROOT; };
+		2AAD5607171F120F0096C987 /* Builder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Builder.cpp; path = src/Builder.cpp; sourceTree = SOURCE_ROOT; };
+		2AAD5608171F120F0096C987 /* Builder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Builder.h; path = src/Builder.h; sourceTree = SOURCE_ROOT; };
+		2AAD5609171F120F0096C987 /* Gate.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Gate.cpp; path = src/Gate.cpp; sourceTree = SOURCE_ROOT; };
+		2AAD560A171F120F0096C987 /* Gate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Gate.h; path = src/Gate.h; sourceTree = SOURCE_ROOT; };
+		2AAD560B171F120F0096C987 /* And.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = And.cpp; path = src/And.cpp; sourceTree = SOURCE_ROOT; };
+		2AAD560C171F120F0096C987 /* And.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = And.h; path = src/And.h; sourceTree = SOURCE_ROOT; };
+		2AAD560D171F120F0096C987 /* Or.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Or.cpp; path = src/Or.cpp; sourceTree = SOURCE_ROOT; };
+		2AAD560E171F120F0096C987 /* Or.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Or.h; path = src/Or.h; sourceTree = SOURCE_ROOT; };
+		2AAD560F171F120F0096C987 /* Not.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Not.cpp; path = src/Not.cpp; sourceTree = SOURCE_ROOT; };
+		2AAD5610171F120F0096C987 /* Not.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Not.h; path = src/Not.h; sourceTree = SOURCE_ROOT; };
+		2AAD5611171F120F0096C987 /* Source.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Source.cpp; path = src/Source.cpp; sourceTree = SOURCE_ROOT; };
+		2AAD5612171F120F0096C987 /* Source.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Source.h; path = src/Source.h; sourceTree = SOURCE_ROOT; };
+		2AAD5613171F120F0096C987 /* Wire.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Wire.cpp; path = src/Wire.cpp; sourceTree = SOURCE_ROOT; };
+		2AAD5614171F120F0096C987 /* Wire.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Wire.h; path = src/Wire.h; sourceTree = SOURCE_ROOT; };
 		B3521239171870F900F6F08B /* Result.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Result.cpp; sourceTree = "<group>"; };
 		B352123A171870FA00F6F08B /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
@@ -105,10 +112,6 @@
 		E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		E7E077E715D3B6510020DFD4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		E7F985F515E0DE99003869B5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
-		b4343497fc01fc0d58410067ce203a43 /* Wire.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Wire.cpp; path = src/Wire.cpp; sourceTree = SOURCE_ROOT; };
-		c2768e0255b1f49b202bd2cea9eb9b4a /* And.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = And.cpp; path = src/And.cpp; sourceTree = SOURCE_ROOT; };
-		c76b3f40cc9b252f17098ec6352a761e /* And.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = And.h; path = src/And.h; sourceTree = SOURCE_ROOT; };
-		fdd6a1c7956861dfa9ccb1e364044b51 /* Builder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Builder.h; path = src/Builder.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,16 +145,16 @@
 		B35212251717367700F6F08B /* Gates */ = {
 			isa = PBXGroup;
 			children = (
-				6cd0279d29a127b46a7f949b07abc1db /* Gate.cpp */,
-				644116e8707dbcfcca9b44a747f2017f /* Gate.h */,
-				c2768e0255b1f49b202bd2cea9eb9b4a /* And.cpp */,
-				c76b3f40cc9b252f17098ec6352a761e /* And.h */,
-				6bdc950f31b1870843cc85eb3b2d1b37 /* Or.cpp */,
-				4fad68a9db50efb38ddc20645c06e37a /* Or.h */,
-				1e2abaf54257bd4224d0da03f4da19ac /* Not.cpp */,
-				961e8a85d290603058983d54ea00c05f /* Not.h */,
-				73ee17a1c69e98554467c63dc41aaaf0 /* Source.cpp */,
-				7c6daa76f193d87cbada2455319ac7c7 /* Source.h */,
+				2AAD5609171F120F0096C987 /* Gate.cpp */,
+				2AAD560A171F120F0096C987 /* Gate.h */,
+				2AAD560B171F120F0096C987 /* And.cpp */,
+				2AAD560C171F120F0096C987 /* And.h */,
+				2AAD560D171F120F0096C987 /* Or.cpp */,
+				2AAD560E171F120F0096C987 /* Or.h */,
+				2AAD560F171F120F0096C987 /* Not.cpp */,
+				2AAD5610171F120F0096C987 /* Not.h */,
+				2AAD5611171F120F0096C987 /* Source.cpp */,
+				2AAD5612171F120F0096C987 /* Source.h */,
 				B3521239171870F900F6F08B /* Result.cpp */,
 				B352123A171870FA00F6F08B /* Result.h */,
 			);
@@ -161,8 +164,8 @@
 		B35212351717990300F6F08B /* Building */ = {
 			isa = PBXGroup;
 			children = (
-				09e73752bcdba783486614829d858889 /* Builder.cpp */,
-				fdd6a1c7956861dfa9ccb1e364044b51 /* Builder.h */,
+				2AAD5607171F120F0096C987 /* Builder.cpp */,
+				2AAD5608171F120F0096C987 /* Builder.h */,
 			);
 			name = Building;
 			sourceTree = "<group>";
@@ -180,8 +183,8 @@
 		B35212371717992B00F6F08B /* Wire */ = {
 			isa = PBXGroup;
 			children = (
-				b4343497fc01fc0d58410067ce203a43 /* Wire.cpp */,
-				042628ae88c04917a8fe0e18904d865e /* Wire.h */,
+				2AAD5613171F120F0096C987 /* Wire.cpp */,
+				2AAD5614171F120F0096C987 /* Wire.h */,
 			);
 			name = Wire;
 			sourceTree = "<group>";
@@ -189,7 +192,7 @@
 		B35212381717996200F6F08B /* Master Include */ = {
 			isa = PBXGroup;
 			children = (
-				1760d8cd1211521ade798382f65698b1 /* State.h */,
+				2AAD5606171F120F0096C987 /* State.h */,
 			);
 			name = "Master Include";
 			sourceTree = "<group>";
@@ -264,6 +267,8 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				2A9912D3171DB84800270040 /* Level.cpp */,
+				2A9912D4171DB84800270040 /* Level.h */,
 				B35212381717996200F6F08B /* Master Include */,
 				B35212361717991800F6F08B /* OpenFrameWorks */,
 				B35212351717990300F6F08B /* Building */,
@@ -368,14 +373,15 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
-				29fdb0866f5479a8e0d06b96a6ee9094 /* And.cpp in Sources */,
-				2bf1c6a3acfb774127e565cfc9d44aa1 /* Builder.cpp in Sources */,
-				6d18dc3137b95406237a030510974eff /* Gate.cpp in Sources */,
-				88827c654226c2446cc44420c02fd37d /* Not.cpp in Sources */,
-				f0af904f730ec919de9da753f6e8b1d3 /* Or.cpp in Sources */,
-				e846184e0278eb03892d11d8ddd6d37d /* Source.cpp in Sources */,
-				1ece2eeb72b9631f49f5779797da0c88 /* Wire.cpp in Sources */,
+				2AAD561C171F120F0096C987 /* And.cpp in Sources */,
+				2AAD561D171F120F0096C987 /* Builder.cpp in Sources */,
+				2AAD561E171F120F0096C987 /* Gate.cpp in Sources */,
+				2AAD561F171F120F0096C987 /* Not.cpp in Sources */,
+				2AAD5620171F120F0096C987 /* Or.cpp in Sources */,
+				2AAD5621171F120F0096C987 /* Source.cpp in Sources */,
+				2AAD5622171F120F0096C987 /* Wire.cpp in Sources */,
 				B352123B171870FA00F6F08B /* Result.cpp in Sources */,
+				2A9912D5171DB84800270040 /* Level.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

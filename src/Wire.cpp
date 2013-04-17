@@ -9,10 +9,10 @@
 #include "Wire.h"
 #include "Gate.h"
 
-Wire::Wire(int howManySources)
+Wire::Wire()
 {
     input = NULL;
-    mState.resize(howManySources);
+    output = NULL;
 }
 
 Wire::~Wire()
@@ -21,30 +21,26 @@ Wire::~Wire()
 }
 
 //This is so we can check up the line fast
-bool Wire::setGateInput( Gate* input )
+bool Wire::setInput( Gate* input )
 {
+    if (!input)
+        return false;
+    
     this->input = input;
     
-    if (this->input != NULL) {
-        return true;
-    } else {
-        return false;
-    }
+    return true;
 }
 
-void Wire::setWireElectricity(vector<EState> states)
+bool Wire::setOutput( Gate* output )
 {
-    this->mState.clear();
+    if (!output)
+        return false;
     
-    this->mState = states;
+    this->output = output;
     
-    if (mState.size() > 0) {
-        cout << "received state inputs " << endl;
-    } else {
-        cout << "there was a problem sending the states" << endl;
-    }
-    
+    return true;
 }
+
 
 vector<EState> Wire::getWireElectricity()
 {

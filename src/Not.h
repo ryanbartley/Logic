@@ -14,11 +14,9 @@ class Wire;
 
 class Not : public Gate {
     
-    bool addInputs(Wire* input1, Wire* input2) { };
-    
 public:
     
-    Not(int howManySources);
+    Not();
     ~Not();
     
     vector<EState> getGateElectricity();

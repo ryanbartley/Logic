@@ -10,10 +10,8 @@
 #include "Wire.h"
 
 
-Result::Result(int howManySources)
+Result::Result()
 {
-    this->howManySources = howManySources;
-    result.resize(howManySources);
 }
 
 Result::~Result()
@@ -21,15 +19,21 @@ Result::~Result()
     result.clear();
 }
 
-void Result::getResult()
+vector<EState> Result::getResult()
 {
-    result = input1->getWireElectricity();
+    if (inputs.size() < 1)
+        return;
     
-    if (howManySources == result.size()) {
-        for (vector<EState>::const_iterator it = result.begin(); it != result.end(); it++) {
-            cout << "The results are " << *it << endl;
-        }
-    } else {
-        cout << "For some reason there aren't enough numbers in the result" << endl;
-    }
+    return inputs[0]->getWireElectricity();
+}
+
+void Result::draw()
+{
+    ofPushMatrix();
+    ofTranslate(300, 500);
+    
+    ofSetColor(0, 255, 0);
+    ofRect(-50, -25, 100, 50);
+    
+    ofPopMatrix();
 }

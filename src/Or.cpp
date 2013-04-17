@@ -9,49 +9,35 @@
 #include "Or.h"
 #include "Wire.h"
 
-Or::Or(int howManySources)
+Or::Or()
 {
-    input1 = NULL;
-    input2 = NULL;
-    output = NULL;
     me = OR;
-    
-    electricityOutput.resize(howManySources);
 }
 
 vector<EState> Or::getGateElectricity()
 {
-    //First get Any Electricity from the wire
-    electricityState1 = this->input1->getWireElectricity();
-    electricityState2 = this->input2->getWireElectricity();
+    vector<EState> result;
     
-    //We should figure out how to catch this if it's not true
-    if (electricityState1.size() == electricityState2.size()) {
-        this->processElectricity();
-    } else {
-        
+    if (inputs.size() < 2) {
+        // for now, on error, return empty vector
+        return result;
     }
     
-    return electricityOutput;
-}
-
-void Or::processElectricity()
-{
-    //The two inputs and the output combo
-    vector<EState>::iterator it1 = electricityState1.begin();
-    vector<EState>::iterator it2 = electricityState2.begin();
-    vector<EState>::iterator itOut = electricityOutput.begin();
+    vector<EState> e1 = inputs[0]->getWireElectricity();
+    vector<EState> e2 = inputs[1]->getWireElectricity();
     
-    int i = 0;
-    while (i < electricityOutput.size()) {
-        //OR LOGIC
-        if (*it1 == HIGH || *it2 == HIGH) {
-            *itOut = HIGH;
-        } else {
-            *itOut = LOW;
-        }
-        it1++;
-        it2++;
-        itOut++;
-        i++;
-    }}
+    if (e1.size() != e2.size()) {
+        // for now, on error, return empty vector
+        return result;
+    }
+    
+    for (int i=0; i<e1.size(); i++)
+    {
+        if (e1[i] == HIGH || e2[i] == HIGH)
+            result.push_back(HIGH);
+        else
+            result.push_back(LOW);
+    }
+    
+    return result;
+}

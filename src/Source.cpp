@@ -9,32 +9,15 @@
 #include "Wire.h"
 #include "Source.h"
 
-Source::Source(int howManySources)
+Source::Source(ofVec2f p, vector<EState> bits)
 {
-    
-    if (howManySources <= 0) return;
+    pos = p;
+    electricity = bits;
     
     me = SOURCE;
     
-    output = NULL;
-    
-    this->electricity.resize(howManySources);
-    
-    cout << "I'm going into the source" << endl;
-    vector<EState>::iterator it = this->electricity.begin();
-    
-    while (it != this->electricity.end()) {
-        int random = rand()%100;
-        
-        if (random > 50) {
-            *it = HIGH;
-        } else {
-            *it = LOW;
-        }
-        cout << *it << " ";
-        it++;
-    }
-    cout << endl;
+    sendCounter = 0;
+    sendSignal = false;
 }
 
 vector<EState> Source::getGateElectricity()
@@ -42,20 +25,57 @@ vector<EState> Source::getGateElectricity()
     return electricity;
 }
 
-bool Source::addSourceOutputs(Wire* wireOutput)
+void Source::draw()
 {
-    //set the output of the gate
-    outputs.push_back(wireOutput);
+    ofPushMatrix();
+    ofTranslate(pos);
     
-    //set the input of the wire and make sure everything
-    //is set before you return.
-    if (wireOutput->setGateInput(this)) {
-        if(outputs.back() != NULL) {
-            return true;
-        } else {
-            return false;
-        }
-    } else {
-        return false;
+    float rectHeight = 100 / electricity.size();
+    for (int i=0; i<electricity.size(); i++)
+    {
+        if (electricity[i] == HIGH)
+            ofSetColor(255);
+        else
+            ofSetColor(50);
+        
+        ofRect(-15, -50+i*rectHeight, 30, rectHeight);
     }
+    
+    ofSetColor(200);
+    ofRect(15, -2+getLastElectron(), 20, 4);
+    
+    ofPopMatrix();
 }
+
+float Source::getLastElectron()
+{
+    int ret;
+    
+    if (sendCounter > electricity.size()*30)
+        return ofRandom(-3, 3);
+    
+    if (electricity[sendCounter/30] == HIGH)
+        ret = 20;
+    else
+        ret = -20;
+    
+    return ret;
+}
+
+
+float Source::popNextElectron()
+{
+    int ret;
+    
+    if (sendCounter > electricity.size()*30)
+        return ofRandom(-3, 3);
+    
+    if (electricity[sendCounter/30] == HIGH)
+        ret = 20;
+    else
+        ret = -20;
+    
+    sendCounter++;
+    return ret;
+}
+

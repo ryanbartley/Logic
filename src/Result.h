@@ -16,13 +16,13 @@ class Result : public Gate {
     
     vector<EState> result;
     
-    int howManySources;
-    
 public:
     
-    Result(int howManySources);
+    Result();
     ~Result();
     
-    void getResult();
+    vector<EState> getResult();
+    
+    void draw();
     
 };

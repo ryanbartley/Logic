@@ -14,12 +14,10 @@ class Wire;
 
 class Or : public Gate {
     
-    bool addInput( Wire* input1 ) {};
 public:
     
-    Or(int howManySources);
+    Or();
     ~Or();
     
     vector<EState> getGateElectricity();
-    void processElectricity();
 };

@@ -16,18 +16,21 @@ class Wire;
 class Source : public Gate {
     
     vector<EState> electricity;
-    
-    vector<float> animationOut;
-    
     vector<Wire*> outputs;
+    
+    int sendCounter;
+    bool sendSignal;
     
 public:
     
-    Source( int howManySources );
+    Source(ofVec2f p, vector<EState> bits);
     ~Source(){};
     
     vector<EState> getGateElectricity();
     
-    bool addSourceOutputs(Wire* wireOutput);
+    void draw();
+    
+    float getLastElectron();
+    float popNextElectron();
     
 };
