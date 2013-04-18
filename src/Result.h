@@ -18,11 +18,12 @@ class Result : public Gate {
     
 public:
     
-    Result();
+    Result(ofVec2f p);
     ~Result();
     
     vector<EState> getResult();
     
     void draw();
+    float suck();
     
 };

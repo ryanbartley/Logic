@@ -29,8 +29,7 @@ public:
     vector<EState> getGateElectricity();
     
     void draw();
+    float suck();
     
-    float getLastElectron();
-    float popNextElectron();
-    
+    void emitSignal();
 };

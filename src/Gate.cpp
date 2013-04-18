@@ -33,6 +33,28 @@ bool Gate::addInput(Wire* wire)
     return true;
 }
 
+float Gate::getLastElectron()
+{
+    return deform->getLastElectron();
+}
+
+
+float Gate::popLastElectron()
+{
+    return deform->popLastElectron();
+}
+
+void Gate::pushElectron(float val)
+{
+    deform->pushElectron(val);
+}
+
+float Gate::suck()
+{
+    return 0;
+}
+
+
 vector<EState> Gate::getGateElectricity()
 {
     

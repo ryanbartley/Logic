@@ -28,6 +28,8 @@ class Level
 public:
     Level();
     
+    void emitSignal();
+    
     void update();
     void draw();
     

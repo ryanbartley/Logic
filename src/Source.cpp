@@ -18,6 +18,8 @@ Source::Source(ofVec2f p, vector<EState> bits)
     
     sendCounter = 0;
     sendSignal = false;
+    
+    deform = new Deformation(bits);
 }
 
 vector<EState> Source::getGateElectricity()
@@ -42,40 +44,17 @@ void Source::draw()
     }
     
     ofSetColor(200);
-    ofRect(15, -2+getLastElectron(), 20, 4);
+    ofRect(15, -2+getLastElectron(), 10, 4);
     
     ofPopMatrix();
 }
 
-float Source::getLastElectron()
+float Source::suck()
 {
-    int ret;
-    
-    if (sendCounter > electricity.size()*30)
-        return ofRandom(-3, 3);
-    
-    if (electricity[sendCounter/30] == HIGH)
-        ret = 20;
-    else
-        ret = -20;
-    
-    return ret;
+    return popLastElectron();
 }
 
-
-float Source::popNextElectron()
+void Source::emitSignal()
 {
-    int ret;
-    
-    if (sendCounter > electricity.size()*30)
-        return ofRandom(-3, 3);
-    
-    if (electricity[sendCounter/30] == HIGH)
-        ret = 20;
-    else
-        ret = -20;
-    
-    sendCounter++;
-    return ret;
+    deform = new Deformation(electricity);
 }
-

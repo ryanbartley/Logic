@@ -10,13 +10,11 @@
 #include <iostream>
 #include "ofMain.h"
 #include "State.h"
-#define SEQUENCE_SIZE 6
-#define NUM_OF_FRAMES 20
 
 class Deformation{
     public:
-    Deformation();
-    Deformation(ofVec2f _direction, bool init);
+    Deformation(int numFrames);
+    Deformation(vector<EState> seq);
     void addRandom(int numFrames, float h);
     void addNoise(int numFrames, float strength, float period);
     void addSilence(int numFrames);
@@ -24,14 +22,16 @@ class Deformation{
     void addSquareWave(int numFrames,vector<EState> sequence);
     void removeSequence(int index);
     int getNumSequences();
-    ofVec2f getFrame(int index);
-    ofVec2f getLastFrame();
-    void setFrame(int index);
+    float getAt(int index);
+    float popLastElectron();
+    float getLastElectron();
+    void pushElectron(float val);
+
     int size();
     
-    vector <ofVec2f> frames;
-    ofVec2f direction;
-    
+    vector<float> values;
+    bool emitSequence;
+    int emitSequenceCounter;
 };
 
 

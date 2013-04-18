@@ -3,10 +3,9 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 
-    
+    ofSetFrameRate(30);
 //    builder = new Builder(3, 3, 3);
     level = new Level();
-    
 }
 
 //--------------------------------------------------------------
@@ -43,7 +42,9 @@ void testApp::mouseDragged(int x, int y, int button){
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button){
+void testApp::mousePressed(int x, int y, int button)
+{
+    level->emitSignal();
 
 }
 

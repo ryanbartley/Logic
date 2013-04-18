@@ -10,6 +10,7 @@
 
 #include "ofMain.h"
 #include "State.h"
+#include "Deformation.h"
 
 class Gate;
 
@@ -24,9 +25,12 @@ class Wire {
     Gate* input;
     Gate* output;
     
+    ofVec2f start, end;
+    Deformation *deform;
+    
 public:
 
-    Wire();
+    Wire(ofVec2f s, ofVec2f e);
     ~Wire();
     
     bool setInput(Gate* input);
@@ -36,7 +40,8 @@ public:
     
     void setShape(vector<ofVec2f> points) { this->points = points; };
     
-    void update();
+    float suck();
+    float getLastElectron();
     void draw();
 
 

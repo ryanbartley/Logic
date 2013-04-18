@@ -9,15 +9,21 @@
 #include "Wire.h"
 #include "Gate.h"
 
-Wire::Wire()
+#define POINTS_NUM  100
+
+Wire::Wire(ofVec2f s, ofVec2f e)
 {
     input = NULL;
     output = NULL;
+
+    start = s;
+    end = e;
+
+    deform = new Deformation(POINTS_NUM);
 }
 
 Wire::~Wire()
 {
-
 }
 
 //This is so we can check up the line fast
@@ -48,14 +54,58 @@ vector<EState> Wire::getWireElectricity()
     return input->getGateElectricity();
 }
 
-void Wire::update()
+float Wire::suck()
 {
+    deform->pushElectron(input->suck());
     
-    
+    return deform->popLastElectron();
 }
+
+float Wire::getLastElectron()
+{
+    return deform->getLastElectron();
+}
+
 
 void Wire::draw()
 {
+    ofPushMatrix();
     
+    ofTranslate(start);
+    ofRotate(ofRadToDeg(atan2((end-start).y, (end-start).x)));
+
+    float inc = (end-start).length() / POINTS_NUM;
+    
+    
+    ofSetColor(8, 10, 26);
+    ofSetLineWidth(8);
+    ofNoFill();
+    
+    ofBeginShape();
+    for (int i=0; i<POINTS_NUM; i++)
+    {
+        ofVertex((float)i*inc, deform->getAt(POINTS_NUM-i));
+    }
+    ofEndShape();
+
+    ofSetColor(37, 48, 155);
+    ofSetLineWidth(6);
+    ofBeginShape();
+    for (int i=0; i<POINTS_NUM; i++)
+    {
+        ofVertex((float)i*inc, deform->getAt(POINTS_NUM-i));
+    }
+    ofEndShape();
+
+    ofSetColor(200);
+    ofSetLineWidth(2);
+    ofBeginShape();
+    for (int i=0; i<POINTS_NUM; i++)
+    {
+        ofVertex((float)i*inc, deform->getAt(POINTS_NUM-i));
+    }
+    ofEndShape();
+
+    ofPopMatrix();
 }
 

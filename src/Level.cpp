@@ -25,23 +25,23 @@ Level::Level()
     s2.push_back(LOW);
     s2.push_back(LOW);
     
-    result = new Result();
+    result = new Result(ofVec2f(700, 175));
 
     gates.push_back(new Source(ofVec2f(50, 100), s1));
     gates.push_back(new Source(ofVec2f(50, 250), s2));
-    gates.push_back(new And());
+    gates.push_back(new And(ofVec2f(400, 175)));
     gates.push_back(result);
     
     
-    Wire *w = new Wire();
+    Wire *w = new Wire(ofVec2f(75, 100), ofVec2f(375, 170));
     connect(gates[0], w, gates[2]);
     wires.push_back(w);
     
-    w = new Wire();
+    w = new Wire(ofVec2f(75, 250), ofVec2f(375, 180));
     connect(gates[1], w, gates[2]);
     wires.push_back(w);
     
-    w = new Wire();
+    w = new Wire(ofVec2f(425, 175), ofVec2f(675, 175));
     connect(gates[2], w, result);
     wires.push_back(w);
     
@@ -72,6 +72,8 @@ void Level::update()
     {
         gates[i]->update();
     }
+    
+    result->suck();
 }
 
 
@@ -79,4 +81,14 @@ void Level::connect(Gate* g1, Wire* w, Gate* g2)
 {
     g1->addOutput(w);
     g2->addInput(w);
+}
+
+void Level::emitSignal()
+{
+    Source *s = (Source*)gates[0];
+    s->emitSignal();
+    
+    s = (Source*)gates[1];
+    s->emitSignal();
+    
 }

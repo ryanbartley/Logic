@@ -10,8 +10,10 @@
 #include "Wire.h"
 
 
-Result::Result()
+Result::Result(ofVec2f p)
 {
+    pos = p;
+    deform = new Deformation(20);
 }
 
 Result::~Result()
@@ -30,10 +32,16 @@ vector<EState> Result::getResult()
 void Result::draw()
 {
     ofPushMatrix();
-    ofTranslate(300, 500);
+    ofTranslate(pos);
     
     ofSetColor(0, 255, 0);
     ofRect(-50, -25, 100, 50);
     
     ofPopMatrix();
+}
+
+float Result::suck()
+{
+    float val = inputs[0]->suck();
+    return val;
 }

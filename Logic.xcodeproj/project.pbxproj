@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A5CA990171FB31A00E89BE0 /* Deformation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CA98C171FB31A00E89BE0 /* Deformation.cpp */; };
+		2A5CA991171FB31A00E89BE0 /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CA98E171FB31A00E89BE0 /* Line.cpp */; };
 		2A9912D5171DB84800270040 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A9912D3171DB84800270040 /* Level.cpp */; };
 		2AAD561C171F120F0096C987 /* And.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD560B171F120F0096C987 /* And.cpp */; };
 		2AAD561D171F120F0096C987 /* Builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD5607171F120F0096C987 /* Builder.cpp */; };
@@ -69,6 +71,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A5CA98C171FB31A00E89BE0 /* Deformation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deformation.cpp; sourceTree = "<group>"; };
+		2A5CA98D171FB31A00E89BE0 /* Deformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deformation.h; sourceTree = "<group>"; };
+		2A5CA98E171FB31A00E89BE0 /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
+		2A5CA98F171FB31A00E89BE0 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		2A9912D3171DB84800270040 /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Level.cpp; sourceTree = "<group>"; };
 		2A9912D4171DB84800270040 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		2AAD5606171F120F0096C987 /* State.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = State.h; path = src/State.h; sourceTree = SOURCE_ROOT; };
@@ -267,6 +273,10 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				2A5CA98C171FB31A00E89BE0 /* Deformation.cpp */,
+				2A5CA98D171FB31A00E89BE0 /* Deformation.h */,
+				2A5CA98E171FB31A00E89BE0 /* Line.cpp */,
+				2A5CA98F171FB31A00E89BE0 /* Line.h */,
 				2A9912D3171DB84800270040 /* Level.cpp */,
 				2A9912D4171DB84800270040 /* Level.h */,
 				B35212381717996200F6F08B /* Master Include */,
@@ -382,6 +392,8 @@
 				2AAD5622171F120F0096C987 /* Wire.cpp in Sources */,
 				B352123B171870FA00F6F08B /* Result.cpp in Sources */,
 				2A9912D5171DB84800270040 /* Level.cpp in Sources */,
+				2A5CA990171FB31A00E89BE0 /* Deformation.cpp in Sources */,
+				2A5CA991171FB31A00E89BE0 /* Line.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 
 #include "ofMain.h"
 #include "State.h"
+#include "Deformation.h"
 #define DEBUG 
 
 class Wire;
@@ -23,6 +24,7 @@ protected:
     vector<Wire*> outputs;
     
     ofVec2f pos;
+    Deformation *deform;
     
     //this is to see what type of gate i am
     Gates me;
@@ -49,6 +51,10 @@ public:
     virtual void setGridPosition(ofVec2f grid) { pos = grid; };
     virtual ofVec2f getGridPosition() { return pos; };
     
+    virtual float popLastElectron();
+    virtual float getLastElectron();
+    virtual void pushElectron(float val);
+    virtual float suck();
 //    //fix this it's only setting and getting one state but we have two states 
 //    //and an output
 //    virtual void setState(EState state) { this->state1 = state; };

@@ -10,16 +10,16 @@
 
 #include "Gate.h"
 
-class Wire;
-
-class And : public Gate {
+class And : public Gate
+{
     
 public:
     
-    And();
+    And(ofVec2f p);
     ~And();
     
     vector<EState> getGateElectricity();
     
     void draw();
+    float suck();
 };
