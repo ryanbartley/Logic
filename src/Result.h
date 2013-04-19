@@ -15,9 +15,12 @@ class Wire;
 class Result : public Gate {
     
     vector<EState> result;
-    
+private:
+    vector<float> wireResult;
+    bool gotResult;
+    bool resultSet;
 public:
-    
+    Deformation resultDeform;    
     Result(ofVec2f p);
     ~Result();
     

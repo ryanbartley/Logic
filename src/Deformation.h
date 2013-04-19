@@ -13,6 +13,7 @@
 
 class Deformation{
     public:
+    Deformation();
     Deformation(int numFrames);
     Deformation(vector<EState> seq);
     void addRandom(int numFrames, float h);
@@ -20,7 +21,7 @@ class Deformation{
     void addSilence(int numFrames);
     void addSine(int numFrames);
     void addSquareWave(int numFrames,vector<EState> sequence);
-    void removeSequence(int index);
+    void setResultDeform(vector<EState> seq);
     int getNumSequences();
     float getAt(int index);
     float popLastElectron();

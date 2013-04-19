@@ -7,7 +7,9 @@
 //
 
 #include "Deformation.h"
-
+Deformation::Deformation(){
+    
+}
 Deformation::Deformation(int numFrames)
 {
     addRandom(numFrames, 5);
@@ -40,52 +42,74 @@ void Deformation::addRandom(int numFrames, float h)
     
 }
 
-/*
-void Deformation::addNoise(int numFrames, float strength, float period)
-{
-    float t = ofRandom(10000);
+void Deformation::setResultDeform(vector<EState> seq){
+    values.clear();
     
-    for(int i =0; i< numFrames;i++){
-        ofVec2f v = ofVec2f((ofNoise(t)-0.5)*strength,(ofNoise(t)-0.5)*strength);
-        v *=direction;
-        frames.push_back(v);
-        t+=period;
-    }
-}
-
-void Deformation::addSilence(int numFrames){
-    for(int i=0;i<numFrames;i++){
-        frames.push_back(ofVec2f(0, 0));
-    }
-}
-
-void Deformation::addSine(int numFrames){
-    float t = 0;
-    for(int i=0; i<numFrames;i++){
-        ofVec2f v = ofVec2f(sin(t)*100,sin(t)*100);
-        v*=direction;
-        frames.push_back(v);
-        t += PI/10;
-    }
-}
-
-void Deformation::addSquareWave(int numFrames, vector<EState> sequence){
-    int sequenceSize = sequence.size();
-    
-    int sequencePeriod = numFrames/sequenceSize;
-    
-    for(int bit =0;bit<sequenceSize;bit++){
-        for(int i=0; i<sequencePeriod; i++){
+    for (int i=0; i<seq.size(); i++)
+    {
+      //  for (int j=0; j<3; j++)
+      //      values.push_back(0);
+        for (int j=0; j<6; j++)
+        {
+            //Making it the opposite of the constructor
+            if (seq[i] == HIGH){
+                values.push_back(-10);
+            }
             
-            ofVec2f v = ofVec2f(-(int)sequence[bit]*10,-(int)sequence[bit]*10);
-            // cout<<sequence[bit]<<endl;
-            v*=direction;
-            frames.push_back(v);
+            else{
+                values.push_back(10);
+            }
             
         }
     }
 }
-*/
+
+/*
+ void Deformation::addNoise(int numFrames, float strength, float period)
+ {
+ float t = ofRandom(10000);
+ 
+ for(int i =0; i< numFrames;i++){
+ ofVec2f v = ofVec2f((ofNoise(t)-0.5)*strength,(ofNoise(t)-0.5)*strength);
+ v *=direction;
+ frames.push_back(v);
+ t+=period;
+ }
+ }
+ 
+ void Deformation::addSilence(int numFrames){
+ for(int i=0;i<numFrames;i++){
+ frames.push_back(ofVec2f(0, 0));
+ }
+ }
+ 
+ void Deformation::addSine(int numFrames){
+ float t = 0;
+ for(int i=0; i<numFrames;i++){
+ ofVec2f v = ofVec2f(sin(t)*100,sin(t)*100);
+ v*=direction;
+ frames.push_back(v);
+ t += PI/10;
+ }
+ }
+ 
+ void Deformation::addSquareWave(int numFrames, vector<EState> sequence){
+ int sequenceSize = sequence.size();
+ 
+ int sequencePeriod = numFrames/sequenceSize;
+ 
+ for(int bit =0;bit<sequenceSize;bit++){
+ for(int i=0; i<sequencePeriod; i++){
+ 
+ ofVec2f v = ofVec2f(-(int)sequence[bit]*10,-(int)sequence[bit]*10);
+ // cout<<sequence[bit]<<endl;
+ v*=direction;
+ frames.push_back(v);
+ 
+ }
+ }
+ }
+ */
 
 float Deformation::popLastElectron(){
     int size = values.size();
